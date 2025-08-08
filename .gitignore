@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python/
+env/
+.venv/
+venv/
+*.env
+.env.*
+# Distribution / packaging
+.Python
+*.egg-info/
+.eggs/
+dist/
+build/
+# Jupyter Notebook
+.ipynb_checkpoints
+# VS Code
+.vscode/
+# IDEs
+.idea/
+*.iml
+# OS
+.DS_Store
+Thumbs.db
+# Data and models (large files that should not be committed)
+
+data/*.xlsx
+models/*.joblib
+

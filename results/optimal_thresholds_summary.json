@@ -1,0 +1,9 @@
+{
+    "LogisticRegression": 0.6062194682066889,
+    "RandomForestClassifier": 0.4803484589841942,
+    "randomforest": 0.385,
+    "SVC": 0.43200978012988855,
+    "svm": 0.4243421070815918,
+    "XGBClassifier": 0.5711203217506409,
+    "xgboost": 0.4081578552722931
+}

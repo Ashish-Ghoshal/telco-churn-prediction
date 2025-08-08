@@ -1,0 +1,6 @@
+{
+    "LogisticRegression_Recall": 0.5096432352972774,
+    "SVM_Recall": 0.24423670573270131,
+    "RandomForest_Recall": 0.377346510226287,
+    "XGBoost_Recall": 0.6740745902061462
+}
