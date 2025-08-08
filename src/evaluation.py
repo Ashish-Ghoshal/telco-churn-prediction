@@ -96,7 +96,7 @@ def evaluate_models(models, X_test, y_test, results_dir):
                 opt_thresh = 0.5
                 print(f"No valid PR thresholds for {name}, using default 0.5.")
 
-            # FIX: Convert numpy.float values to standard Python float for JSON serialization
+            
             optimal_thresholds[name] = float(opt_thresh)
 
         # 5. Confusion Matrix Plot

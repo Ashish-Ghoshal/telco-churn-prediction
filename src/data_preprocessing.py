@@ -203,11 +203,9 @@ def preprocess_data(df, models_dir):
     print(f"Initial X_test shape: {X_test.shape}, y_test shape: {y_test.shape}")
 
 
-    # Create a pipeline that includes the ColumnTransformer and SelectKBest
-    # This ensures feature selection is part of the saved preprocessor
+    # Pipeline includes ColumnTransformer and SelectKBest for feature selection
     k_features = int(X_train.shape[1] * 0.8) # Select top 80% features
-    # Apply initial transformation to get feature names for SelectKBest properly
-    # This intermediate step is needed to get the correct number of features for SelectKBest
+    # Initial transform to get correct feature count for SelectKBest
     X_train_transformed_initial = feature_transformer.fit_transform(X_train)
     
     # After initial transform, calculate k_features based on the transformed dimension
@@ -233,9 +231,7 @@ def preprocess_data(df, models_dir):
     X_train_processed = full_preprocessor_pipeline.fit_transform(X_train, y_train)
     X_test_processed = full_preprocessor_pipeline.transform(X_test)
 
-    # Get feature names after all transformations for potential SHAP use
-    # This requires a slightly more involved process to get names from the pipeline
-    # The 'features' step is the ColumnTransformer, 'selector' is SelectKBest
+    # Get feature names after all transformations for SHAP use
     transformed_feature_names_all = full_preprocessor_pipeline.named_steps['features'].get_feature_names_out()
     selected_indices = full_preprocessor_pipeline.named_steps['selector'].get_support(indices=True)
     selected_feature_names = [transformed_feature_names_all[i] for i in selected_indices]
